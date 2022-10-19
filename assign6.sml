@@ -1,12 +1,3 @@
-(*
- *
- * Vivien Song
- *
- * CS 54, Fall 2022
- * Assignment 6
- *
- *)
-
 
 
 (*** Starter code   $-* $+ ***)
@@ -140,7 +131,6 @@ fun inverseMod (u,m) =
         end;
 
 
-(*** Problem 1   $- $+06_01 ***)
 (* powerMod : IntInf.int * IntInf.int * IntInf.int -> IntInf.int *)
 (* This function computes b^e mod n recursively *)
 
@@ -152,7 +142,6 @@ fun inverseMod (u,m) =
             b * ((powerMod(b, (e quot two), n)) * (powerMod(b, (e quot two), n))) rem n;
         
 
-(*** Problem 2   $-06_01 $+06_s02 ***)
 (* block : IntInf.int * IntInf.int -> IntInf.int list   *)
 (* This function turns an integer into its base-n representation in a list*)
 
@@ -188,7 +177,6 @@ fun unblock (x, []) = zero
 
 
 
-(*** Problem 3   $-06_02 $+06_03 ***)
 (* messageToIntInf : string -> IntInf.int *)
 (* Converts a string of letters into a number represented in base 256 *)
 
@@ -229,7 +217,6 @@ fun intInfToMessage x =
 
 
 
-(*** Problem 4   $-06_03 $+06_04 ***)
 (* rsaEncode : IntInf.int * IntInf.int -> IntInf.int -> IntInf.int *)
 (* Calculates m^e mod n *)
 
@@ -237,7 +224,6 @@ fun rsaEncode (e, n) m = powerMod (m, e, n);
 
 
 
-(*** Problem 5a   $-06_04 $+06_05a ***)
 (* encodeString : IntInf.int * IntInf.int -> string -> IntInf.int *)
 (* Takes a string and a key and encrypts the message in the string *)
 
@@ -250,7 +236,6 @@ fun encodeString (e, n) str =
     end;
 
 
-(*** Problem 5b   $-06_05a $+06_05b ***)
 (* decodeString : IntInf.int * IntInf.int -> IntInf.int -> string *)
 (* Takes a number and a key and decrypts a message from the given number *)
 
@@ -264,7 +249,6 @@ fun decodeString (e, n) num =
     end;
 
 
-(*** Problem 6   $-06_05b $+06_06 ***)
 (* industrialStrengthPrime : Random.rand -> int -> IntInf.int *)
 (* Takes a random number generator and a number of bits to generate a random prime *)
 
@@ -295,7 +279,6 @@ fun industrialStrengthPrime gen k =
     
 
 
-(*** Problem 7   $-06_06 $+06_07 ***)
 (* newRSAKeys : int -> (IntInf.int * IntInf.int) * (IntInf.int * IntInf.int) *)
 (* Generates a pair of public and private keys by calling industrialStrengthPrime *)
 
@@ -320,7 +303,6 @@ fun newRSAKeys gen k =
             getDE()
         end;
 
-(*** Problem 8a   $-06_07 $+06_08a ***)
 (* Takes a public key and finds the corresponding private key. plus variable with cracked key *)
 
 fun privateKey (e, n) = 
@@ -339,11 +321,6 @@ fun privateKey (e, n) =
 
 val crackedPrivateKey = (one * 701, one * 52753);
 
-
-
-(*** Problem 8b   $-06_08a $+06_08b ***)
-
-(* ANSWER: (2^80)/(2^8)t *)
 
 
 
